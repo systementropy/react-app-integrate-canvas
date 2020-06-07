@@ -1,4 +1,4 @@
-body,html,*{
+body,html{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -19,7 +19,7 @@ button:hover{
   color: black;
 }
 .red{
-  background: #dc3520; 
+  color: #dc3520; 
 }
 .bold{
   font-weight: bold;
