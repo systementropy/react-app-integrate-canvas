@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import Persons from '../Components/Persons/Persons';
+import Cockpit from '../Components/Cockpit/Cockpit'
 import classes from './App.module.css'
 // import Persons from './Persons/Persons'
 
@@ -50,22 +51,15 @@ class App extends React.Component{
       )
       btnClass = classes.Red;
     }
-    const assignedClasses = [];
-    if(this.state.persons.length<=2){
-      assignedClasses.push(classes.red)
-    }
-    if(this.state.persons.length<=1){
-      assignedClasses.push(classes.bold)
-    }
+    
     return(
       
       <div>
-        <h1>Hello</h1>
-        <p className={assignedClasses.join(' ')}>This is it.......</p>
-        <button 
-          className={btnClass} 
-          onClick={this.togglePersonHandler}
-        >Click to Toggle</button>
+        <Cockpit 
+          showPersons={this.state.showPersons}
+          persons={this.state.persons}
+          clicked= {this.togglePersonHandler}
+        />
         {persons}
       </div>
     )

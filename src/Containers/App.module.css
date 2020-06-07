@@ -7,20 +7,3 @@ body,html{
 .App {
   text-align: center;
 }
-button{
-  padding: 5px 10px;
-  background: #1a5e11;
-  color: aliceblue;
-  font-size: 32px;
-  cursor: pointer;
-}
-button:hover{
-  background: lightgreen;
-  color: black;
-}
-.red{
-  color: #dc3520; 
-}
-.bold{
-  font-weight: bold;
-}

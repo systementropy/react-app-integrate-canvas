@@ -1,0 +1,28 @@
+.Cockpit button{
+    padding: 5px 10px;
+    background: #1a5e11;
+    color: aliceblue;
+    font-size: 32px;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+.Cockpit button:hover{
+    background: lightgreen;
+    color: black;
+}
+.Cockpit button.active {
+    color: #383838;
+    background-color: rosybrown;
+    border: 1px solid #dc3520;
+}
+.Cockpit button.active:hover {
+    background-color: #dc3520;
+    border: 1px solid rosybrown;
+    color: aliceblue;
+}
+.red{
+    color: #dc3520; 
+}
+.bold{
+    font-weight: bold;
+}  
