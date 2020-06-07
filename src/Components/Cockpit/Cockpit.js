@@ -4,11 +4,8 @@ const cockpit = (props) => {
     const assignedClasses = [];
     let btnClass ='';
     if(props.showPersons){
-        console.log('eherhe')
         btnClass = classes.active
     }
-    console.log(classes)
-    console.log('btnClass'+btnClass)
     if(props.persons.length<=2){
       assignedClasses.push(classes.red)
     }
@@ -17,7 +14,7 @@ const cockpit = (props) => {
     }
     return (
         <div className={classes.Cockpit}>
-            <h1>Hello</h1>
+            <h1>{props.title}</h1>
             <p className={assignedClasses.join(' ')}>This is it.......</p>
             <button 
             className={btnClass} 

@@ -38,7 +38,6 @@ class App extends React.Component{
   }
   render(){
     let persons = null;
-    let btnClass = '';
     if(this.state.showPersons){
       persons = (
         <div>
@@ -49,13 +48,13 @@ class App extends React.Component{
           />
         </div>
       )
-      btnClass = classes.Red;
     }
     
     return(
       
-      <div>
+      <div className={classes.App}>
         <Cockpit 
+          title = {this.props.appTitle}
           showPersons={this.state.showPersons}
           persons={this.state.persons}
           clicked= {this.togglePersonHandler}
