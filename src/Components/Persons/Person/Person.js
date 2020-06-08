@@ -1,7 +1,7 @@
 import React from 'react';
-import classes from './Person.css'
 
 const Person = (props) => {
+    console.log('[PersonJS] Render')
     return(
         <div className="Person">
             <p onClick={props.click}>{props.name}</p>

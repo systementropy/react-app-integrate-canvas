@@ -4,15 +4,30 @@ import Cockpit from '../Components/Cockpit/Cockpit'
 import classes from './App.module.css'
 // import Persons from './Persons/Persons'
 
-class App extends React.Component{
-  state = {
-    persons:[
-      {id:1,name:'Foo',age:26},
-      {id:2,name:'Bar',age:36},
-      {id:3,name:'Baz',age:32},
-    ],
-    showPersons: false,
-    otherState: 'Some Other State'
+class App extends Component{
+  constructor(props){
+    super(props);
+    console.log('[AppJS] constructor')
+    this.state = {
+      persons:[
+        {id:1,name:'Foo',age:26},
+        {id:2,name:'Bar',age:36},
+        {id:3,name:'Baz',age:32},
+      ],
+      showPersons: false,
+      otherState: 'Some Other State'
+    }
+  }
+  
+  static getDerivedStateFromProps(props,state){
+    console.log('[AppJS] getDerivedStateFromProps',props)
+    return state
+  }
+  componentWillMount(){
+    console.log('[AppJS] componentWillMount')
+  }
+  componentDidMount(){
+    console.log('[AppJS] componentDidMount')
   }
   
   nameChangeHandler = (event, id) =>{
@@ -37,6 +52,7 @@ class App extends React.Component{
     this.setState ({showPersons: !doesShow})
   }
   render(){
+    console.log('[AppJS] Render')
     let persons = null;
     if(this.state.showPersons){
       persons = (
