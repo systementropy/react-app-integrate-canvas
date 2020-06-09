@@ -2,8 +2,16 @@ import React,{useEffect} from "react";
 import classes from './Cockpit.module.css';
 const Cockpit = (props) => {
     useEffect(()=>{
-      console.log('[CockpitJS] UseEffect')
-    })
+      console.log('[CockpitJS] UseEffect:Only For The First Time')
+      setTimeout(()=>{alert('Toggle Happened')},200)
+    },[])
+    useEffect(()=>{
+      console.log('[CockpitJS] UseEffect:Persons')
+    },[props.persons])
+    useEffect(()=>{
+      console.log('[CockpitJS] UseEffect:showPersons')
+      setTimeout(()=>{alert('Toggle Happened')},1000)
+    },[props.showPersons])
     const assignedClasses = [];
     let btnClass ='';
     if(props.showPersons){
