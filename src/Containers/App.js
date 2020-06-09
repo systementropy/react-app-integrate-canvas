@@ -23,8 +23,15 @@ class App extends Component{
     console.log('[AppJS] getDerivedStateFromProps',props)
     return state
   }
-  componentWillMount(){
-    console.log('[AppJS] componentWillMount')
+  // componentWillMount(){
+  //   console.log('[AppJS] componentWillMount')
+  // }
+  shouldComponentUpdate(){
+    console.log('[AppJS] shouldComponentUpdate')
+    return true;
+  }
+  componentDidUpdate(){
+    console.log('[AppJS] componentDidUpdate')
   }
   componentDidMount(){
     console.log('[AppJS] componentDidMount')
