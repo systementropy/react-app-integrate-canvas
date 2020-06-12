@@ -3,7 +3,11 @@ import classes from './Cockpit.module.css';
 const Cockpit = (props) => {
     useEffect(()=>{
       console.log('[CockpitJS] UseEffect:Only For The First Time')
-      setTimeout(()=>{alert('Toggle Happened')},200)
+      const timer = setTimeout(()=>{alert('Only For The First Time')},1000)
+      return () =>{
+        clearTimeout(timer)
+        console.log('[CockpitJS] UseEffect:Cleanup WOrk')
+      }
     },[])
     useEffect(()=>{
       console.log('[CockpitJS] UseEffect:Persons')
