@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+import React, { PureComponent } from 'react';
 import Person from './Person/Person'
 // const persons = props => {
 //     console.log('[PersonSJS] Render')
@@ -12,12 +12,12 @@ import Person from './Person/Person'
 //             />
 //     })
 // }
-class Persons extends Component{
+class Persons extends PureComponent {
     // static getDerivedStateFromProps(props,state){
     //     console.log('[PersonSJS] getDerivedStateFromProps',props)
     //     return state;
     // }
-    
+
     // componentWillReceiveProps(props){
     //     console.log('[PersonSJS] componentWillReceiveProps',props)
     // }
@@ -25,29 +25,37 @@ class Persons extends Component{
     // componentWillUpdate(){
     //     console.log('[PersonSJS] componentWillUpdate')
     // }
-    
-    shouldComponentUpdate(nextProps,nextState){
-        console.log('[PersonSJS] shouldComponentUpdate')
-        return true;
-    }
-    getSnapshotBeforeUpdate(prevProps, prevState){
+
+    // shouldComponentUpdate(nextProps, nextState) {
+    //     console.log('[PersonSJS] shouldComponentUpdate');
+    //     if (
+    //         nextProps.persons !== this.props.persons ||
+    //         nextProps.clicked !== this.props.clicked ||
+    //         nextProps.changed !== this.props.changed
+    //     ) {
+    //         return true;
+    //     } else {
+    //         return false
+    //     }
+    // }
+    getSnapshotBeforeUpdate(prevProps, prevState) {
         console.log('[PersonSJS] getSnapshotBeforeUpdate')
-        return {message:'LOLwa'};
+        return { message: 'LOLwa' };
     }
-    componentDidUpdate(prevProps,prevState,snapShot){
+    componentDidUpdate(prevProps, prevState, snapShot) {
         console.log('[PersonSJS] componentDidUpdate')
         console.log(snapShot)
     }
-    render(){
+    render() {
         console.log('[PersonSJS] Render')
         return this.props.persons.map((person, index) => {
             return (
                 <Person
-                    click = {() => this.props.clicked(index)}
-                    name = {person.name}
-                    age = {person.age}
-                    key = {person.id}
-                    changed = {(event) => this.props.changed(event,person.id)}
+                    click={() => this.props.clicked(index)}
+                    name={person.name}
+                    age={person.age}
+                    key={person.id}
+                    changed={(event) => this.props.changed(event, person.id)}
                 />
             )
         })

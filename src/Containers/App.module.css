@@ -6,4 +6,6 @@ body,html{
 }
 .App {
   text-align: center;
+  padding: 100px;
+  background: #CCC;
 }
